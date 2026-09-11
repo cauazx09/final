@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Dashboard IoT - Azul Acinzentado</title>
+
+        <link
+            href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap"
+            rel="stylesheet" />
+
+        <link rel="stylesheet" href="assets/css/index.css" />
+
+        <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/paho-mqtt/1.0.1/mqttws31.min.js"
+            type="text/javascript"></script>
+        <script src="assets/js/index.js" defer></script>
+    </head>
+    <body>
+        <div class="dashboard-wrapper">
+            <div class="nav">
+                <a href="./assets/pages/inicial.html" class="nav-link">Dashboard</a>
+            </div>
+
+            <header class="header">
+                <h1 class="text-color">
+                    Monitoramento <span class="blue-iot">IoT</span>
+                </h1>
+
+                <div class="status-badge disconnected" id="status-badge">
+                    <span class="dot"></span>
+                    <span id="status">Desconectado</span>
+                </div>
+            </header>
+
+            <main class="data-stack">
+                <div class="data-row">
+                    <div class="data-info">
+                        <span class="icon">🌡️</span>
+                        <p class="data-name">Temperatura</p>
+                    </div>
+                    <div class="data-value-wrapper">
+                        <p class="data-value" id="temp">--</p>
+                        <p class="data-unit">°C</p>
+                    </div>
+                </div>
+
+                <div class="data-row">
+                    <div class="data-info">
+                        <span class="icon">💧</span>
+                        <p class="data-name">Umidade</p>
+                    </div>
+                    <div class="data-value-wrapper">
+                        <p class="data-value" id="umidade">--</p>
+                        <p class="data-unit">%</p>
+                    </div>
+                </div>
+
+                <div class="data-row">
+                    <div class="data-info">
+                        <span class="icon">🌬️</span>
+                        <p class="data-name">Qualidade do Ar</p>
+                    </div>
+                    <div class="data-value-wrapper">
+                        <p class="data-value" id="ar">--</p>
+                        <p class="data-unit">AQI</p>
+                    </div>
+                </div>
+            </main>
+
+            <footer class="footer">
+                <p>@ Desenvolvido por Gustavo C., Cauã S., Yago S., Davi G., e Lucas F.</p>
+            </footer>
+        </div>
+    </body>
+</html>
