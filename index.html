@@ -24,7 +24,8 @@
 
             <header class="header">
                 <h1 class="text-color">
-                    Monitoramento <span class="blue-iot">IoT</span>
+                    Monitoramento
+                    <span class="blue-iot">IoT</span>
                 </h1>
 
                 <div class="status-badge disconnected" id="status-badge">
@@ -69,8 +70,31 @@
             </main>
 
             <footer class="footer">
-                <p>@ Desenvolvido por Gustavo C., Cauã S., Yago S., Davi G., e Lucas F.</p>
+                <p id="integrantes-list">@ Desenvolvido por...</p>
             </footer>
         </div>
     </body>
+
+    <script>
+        (function () {
+            const integrantesPadrao = ['Gustavo C.', 'Cauã S.', 'Yago S.', 'Davi G.', 'Lucas F.'];
+            let integrantes;
+
+            try {
+                integrantes = JSON.parse(localStorage.getItem('integrantes'));
+            } catch (e) {
+                integrantes = null;
+            }
+
+            if (!integrantes || !Array.isArray(integrantes) || integrantes.length === 0) {
+                integrantes = integrantesPadrao;
+                localStorage.setItem('integrantes', JSON.stringify(integrantes));
+            }
+
+            const el = document.getElementById('integrantes-list');
+            if (el) {
+                el.innerText = `@ Desenvolvido por ${integrantes.join(', ')}.`;
+            }
+        })();
+    </script>
 </html>
